@@ -41,6 +41,8 @@ dependencyManagement {
 }
 
 dependencies {
+    compile "org.grails.plugins:swaggydoc-grails3:0.26.0"
+
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"

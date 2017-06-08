@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.grails.plugins:swaggydoc-grails3:0.26.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails.plugins/swaggydoc-grails3/0.26.0/955f41c2f874bb65b4e86bfb49171efe9f2175d5/swaggydoc-grails3-0.26.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails.plugins/swaggydoc-grails3/0.26.0/b5d4ca539ad17f325b95079b08000048d1951c95/swaggydoc-grails3-0.26.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

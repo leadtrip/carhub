@@ -1,8 +1,13 @@
 package carhub.v2
 
 import carhub.Car
+import com.wordnik.swagger.annotations.Api
+import com.wordnik.swagger.annotations.ApiImplicitParam
+import com.wordnik.swagger.annotations.ApiImplicitParams
+import com.wordnik.swagger.annotations.ApiOperation
 import grails.rest.RestfulController
 
+@Api( value = 'car', description = "Car v2 management API" )
 class CarV2Controller extends RestfulController<Car> {
 
     static responseFormats = ['json', 'xml']
@@ -11,15 +16,22 @@ class CarV2Controller extends RestfulController<Car> {
         super( Car )
     }
 
+    @ApiOperation( value = 'Retrieve all cars' )
     @Override
     def index( Integer max ){
         respond Car.all
     }
-
+    @ApiOperation( value = 'Retrieve all turbocharged cars' )
     def turbocharged() {
         respond Car.findAllByAspiration( 'Turbocharged' )
     }
 
+    @ApiOperation( value = 'Search for cars' )
+    @ApiImplicitParams([
+            @ApiImplicitParam(name = 'manufacturer', paramType = 'query', required = false, dataType = 'String'),
+            @ApiImplicitParam(name = 'model', paramType = 'query', required = false, dataType = 'String'),
+            @ApiImplicitParam(name = 'aspiration', paramType = 'query', required = false, dataType = 'String')
+    ])
     def search( params ) {
         respond Car.createCriteria().list {
             if ( params.manufacturer ) {
