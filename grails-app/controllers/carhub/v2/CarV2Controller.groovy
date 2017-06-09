@@ -47,6 +47,7 @@ class CarV2Controller extends RestfulController<Car> {
         Car.withCriteria() {
             resultTransformer( CriteriaSpecification.ALIAS_TO_ENTITY_MAP )
             projections{
+                property( 'id', 'id' )
                 property( 'manufacturer', 'manufacturer' )
                 property( 'model', 'model' )
                 property( 'bhp', 'bhp' )

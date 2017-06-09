@@ -13,7 +13,7 @@ class CarV1Controller extends RestfulController<Car> {
     static responseFormats = ['json', 'xml']
 
     CarV1Controller() {
-        super( Car )
+        super( Car, true )
     }
 
     @Override
@@ -21,6 +21,7 @@ class CarV1Controller extends RestfulController<Car> {
         Car.withCriteria() {
             resultTransformer( CriteriaSpecification.ALIAS_TO_ENTITY_MAP )
             projections{
+                property( 'id', 'id' )
                 property( 'manufacturer', 'manufacturer' )
                 property( 'model', 'model' )
                 property( 'bhp', 'bhp' )
