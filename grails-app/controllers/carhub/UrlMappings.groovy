@@ -21,8 +21,6 @@ class UrlMappings {
         }
         "/api/cars/v3"( resources: "carV3" )
 
-        "/apidocs" (controller: "api")
-
         "/"(view:"/index")
         "500"(view:'/error')
         "404"(view:'/notFound')

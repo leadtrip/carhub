@@ -6,6 +6,7 @@ import com.wordnik.swagger.annotations.ApiImplicitParam
 import com.wordnik.swagger.annotations.ApiImplicitParams
 import com.wordnik.swagger.annotations.ApiOperation
 import grails.rest.RestfulController
+import org.hibernate.criterion.CriteriaSpecification
 
 @Api( value = 'car', description = "Car v2 management API" )
 class CarV2Controller extends RestfulController<Car> {
@@ -16,11 +17,6 @@ class CarV2Controller extends RestfulController<Car> {
         super( Car )
     }
 
-    @ApiOperation( value = 'Retrieve all cars' )
-    @Override
-    def index( Integer max ){
-        respond Car.all
-    }
     @ApiOperation( value = 'Retrieve all turbocharged cars' )
     def turbocharged() {
         respond Car.findAllByAspiration( 'Turbocharged' )
@@ -42,6 +38,18 @@ class CarV2Controller extends RestfulController<Car> {
             }
             if ( params.model ) {
                 ilike 'model', "%${params.model}%"
+            }
+        }
+    }
+
+    @Override
+    protected List<Car> listAllResources(Map params) {
+        Car.withCriteria() {
+            resultTransformer( CriteriaSpecification.ALIAS_TO_ENTITY_MAP )
+            projections{
+                property( 'manufacturer', 'manufacturer' )
+                property( 'model', 'model' )
+                property( 'bhp', 'bhp' )
             }
         }
     }

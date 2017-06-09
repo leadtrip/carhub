@@ -4,7 +4,7 @@ import carhub.Car
 import com.wordnik.swagger.annotations.Api
 import grails.rest.RestfulController
 
-@Api( value = 'car', description = "Car v1 management API" )
+@Api( value = 'car', description = "Car v3 management API" )
 class CarV3Controller extends RestfulController<Car> {
 
     static responseFormats = ['json', 'xml']
