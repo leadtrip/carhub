@@ -1,8 +1,18 @@
+import carhub.Authority
 import carhub.Car
+import carhub.User
+import carhub.UserAuthority
 
 class BootStrap {
 
     def init = { servletContext ->
+
+        if( !User.findByUsername( 'mikew' ) ) {
+            def role1 = new Authority(authority: "ROLE_USER").save flush: true
+            def user1 = new User(username: "mikew", password: "password1").save flush: true
+            UserAuthority.create(user1, role1)
+        }
+
         new Car( model: 'S63', manufacturer: 'Mercedes', aspiration: 'Turbocharged', weight: 2070, valves: 32, cylinders: 8, bhp: 518, displacement: 6208, zeroToSixty: '4.5', topSpeed: 155 ).save( failOnError: true )
         new Car( model: 'F1', manufacturer: 'McLaren', aspiration: 'Natural', weight: 1140, valves: 48, cylinders: 12, bhp: 627, displacement: 6064, zeroToSixty: '3.2', topSpeed: 240 ).save( failOnError: true )
         new Car( model: 'Evora', manufacturer: 'Lotus', aspiration: 'Natural', weight: 1350, valves: 24, cylinders: 6, bhp: 276, displacement: 3456, zeroToSixty: '4.9', topSpeed: 160 ).save( failOnError: true )

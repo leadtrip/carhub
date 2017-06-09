@@ -9,9 +9,9 @@ class UrlMappings {
             }
         }
 
-        "/cars" ( resources: 'carV1' )
-        "/cars/v1"( resources: "carV1" )
-        '/cars/v2'( resources: "carV2" ) {
+        "/api/cars" ( resources: 'carV1' )
+        "/api/cars/v1"( resources: "carV1" )
+        '/api/cars/v2'( resources: "carV2" ) {
             collection {
                 '/turbocharged'(controller: 'carV2', action: 'turbocharged')
             }
@@ -19,6 +19,9 @@ class UrlMappings {
                 "/search"( controller: 'carV2', action: 'search' )
             }
         }
+        "/api/cars/v3"( resources: "carV3" )
+
+        "/apidocs" (controller: "api")
 
         "/"(view:"/index")
         "500"(view:'/error')
