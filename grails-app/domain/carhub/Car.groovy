@@ -16,6 +16,8 @@ class Car {
     String zeroToSixty
     Integer topSpeed
 
+    static hasMany = [images: Image]
+
     static constraints = {
         model nullable: false
         aspiration nullable: false

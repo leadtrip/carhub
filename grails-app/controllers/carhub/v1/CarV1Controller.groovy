@@ -10,7 +10,7 @@ import org.hibernate.criterion.CriteriaSpecification
 @Api( value = 'car', description = "Car v1 management API" )
 class CarV1Controller extends RestfulController<Car> {
 
-    static responseFormats = ['json', 'xml']
+    static responseFormats = ['json', 'xml', 'hal']
 
     CarV1Controller() {
         super( Car, true )
@@ -18,7 +18,7 @@ class CarV1Controller extends RestfulController<Car> {
 
     @Override
     protected List<Car> listAllResources(Map params) {
-        Car.withCriteria() {
+        Car.withCriteria( params ) {
             resultTransformer( CriteriaSpecification.ALIAS_TO_ENTITY_MAP )
             projections{
                 property( 'id', 'id' )

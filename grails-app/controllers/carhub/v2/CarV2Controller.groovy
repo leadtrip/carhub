@@ -11,7 +11,7 @@ import org.hibernate.criterion.CriteriaSpecification
 @Api( value = 'car', description = "Car v2 management API" )
 class CarV2Controller extends RestfulController<Car> {
 
-    static responseFormats = ['json', 'xml']
+    static responseFormats = ['json', 'xml', 'hal']
 
     CarV2Controller() {
         super( Car )
@@ -19,7 +19,32 @@ class CarV2Controller extends RestfulController<Car> {
 
     @ApiOperation( value = 'Retrieve all turbocharged cars' )
     def turbocharged() {
-        respond Car.findAllByAspiration( 'Turbocharged' )
+        respond Car.createCriteria().list {
+            eq 'aspiration', "Turbocharged"
+
+            resultTransformer( CriteriaSpecification.ALIAS_TO_ENTITY_MAP )
+            projections{
+                property( 'id', 'id' )
+                property( 'manufacturer', 'manufacturer' )
+                property( 'model', 'model' )
+                property( 'bhp', 'bhp' )
+            }
+        }
+    }
+
+    @ApiOperation( value = 'Retrieve all natural aspirated cars' )
+    def natural() {
+        respond Car.createCriteria().list {
+            eq 'aspiration', "Natural"
+
+            resultTransformer( CriteriaSpecification.ALIAS_TO_ENTITY_MAP )
+            projections{
+                property( 'id', 'id' )
+                property( 'manufacturer', 'manufacturer' )
+                property( 'model', 'model' )
+                property( 'bhp', 'bhp' )
+            }
+        }
     }
 
     @ApiOperation( value = 'Search for cars' )
@@ -38,6 +63,13 @@ class CarV2Controller extends RestfulController<Car> {
             }
             if ( params.model ) {
                 ilike 'model', "%${params.model}%"
+            }
+            resultTransformer( CriteriaSpecification.ALIAS_TO_ENTITY_MAP )
+            projections{
+                property( 'id', 'id' )
+                property( 'manufacturer', 'manufacturer' )
+                property( 'model', 'model' )
+                property( 'bhp', 'bhp' )
             }
         }
     }

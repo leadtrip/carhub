@@ -71,14 +71,13 @@ spring:
 ---
 grails:
     mime:
+        use:
+            accept:
+                header: true
         disable:
             accept:
                 header:
-                    userAgents:
-                        - Gecko
-                        - WebKit
-                        - Presto
-                        - Trident
+                    userAgents: []
         types:
             all: '*/*'
             atom: application/atom+xml
