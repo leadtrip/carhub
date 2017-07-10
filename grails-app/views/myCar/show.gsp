@@ -6,6 +6,7 @@
     <style type="text/css">
         body {
             background-image: url("${car.images[0].uri}");
+            background-repeat: no-repeat;
         }
     </style>
 </head>
