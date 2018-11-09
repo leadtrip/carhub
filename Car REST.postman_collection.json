@@ -1,0 +1,534 @@
+{
+	"info": {
+		"_postman_id": "4ae6e847-71a1-5547-40be-b00fdc9ab4ef",
+		"name": "Car REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9090/api/cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9090/api/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars"
+					]
+				},
+				"description": "All cars"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"bhp\": 601\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"v1"
+					]
+				},
+				"description": "All cars v1"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"bhp\": 601\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/v2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"v2"
+					]
+				},
+				"description": "All cars v2"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v2/turbocharged",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"bhp\": 601\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/v2/turbocharged",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"v2",
+						"turbocharged"
+					]
+				},
+				"description": "All turbocharged"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v2/natural",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/v2/natural",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"v2",
+						"natural"
+					]
+				},
+				"description": "Naturally aspirated cars"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v2/search?manufacturer=Merc&aspiration=turbo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJwcmluY2lwYWwiOiJINHNJQUFBQUFBQUFBSlZTUDBcL2JRQlJcL0Rva29RbXFoRXBVNndBTGRLa2VpWTZhQ0FoS3lBQkd5VUtuVnhYNjRSODUzNXU1TWtnVmxLZ01EaUQ4U0VsK0Jid0pMUDBEVkRsMlp1XC9hZElUaXdJRzZ5M1wvMzgrXC9kOGRRc1ZvK0ZUckJrWHhrOUZGblBwbTFSekdSc01NODF0ejg4TTZnaHRqbGpPZ1UyYXdOM3hTdUFGVU9LUmhiZkJEdHRqVmNGa1hGMXI3V0JvYTEwTjgwckg5NHpibWlYWVVicnRQM0NIU3VNamdZTGFPeTdCNkJaTXNqQlVtYlNyU3RhN0tkY1liY0ZFTVF0VTJIYWpxWkJ1VUZyT2hCbUdqcUprTFlGUkFPTXNzOThWcVhJMEZ0N2NtYzBzRjlVRzJsb0FyMUptRExsN2txUmhuWFYzNzJ4S1NyQUwrMUR1cGg0ZDZ1NkRnXC9xT3gxOVVRbEJxcnFTWmE4cEVSWHliTzNIaTcwK2ZcL0R5NjdEZExBTlRKeCtlXC9LZWJ2RjZCXC9cL2ZYZlRGNjBGMXA0TjJTOWdOVzZLYm1aTEpnM05UcmxYeGZycCtlM0IxOUdTTmtobGw2K2o3blA5ODMxRmxXU01zMnNHdG9SMFhiSzdwbklGNTRuSDJ5aDV6ZDRrZ3FrUDBwYWpCNGtDbUtLVzlaS0RQcTJNTGF4RnRTXC9OUnYxRGZkV1NYZ2JPeVQ2T3NcL3NsdVVIaWxaMStQZjQ1bWoyTnhHc1FHV1BpUXlwOG9rQ3RKb2xMZFFcL3JzNm54OFwvK0hPWUJCalwvemYwR2RVWmdRQXdBQSIsInN1YiI6Im1pa2V3Iiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTQ5NzAxNzE0MCwiaWF0IjoxNDk3MDEzNTQwfQ.g-wofFE2b7SjIJaw7e4D2GeWE09icr3WbgBQsB-Pyl8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"bhp\": 601\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/v2/search?manufacturer=Merc&aspiration=turbo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"v2",
+						"search"
+					],
+					"query": [
+						{
+							"key": "manufacturer",
+							"value": "Merc"
+						},
+						{
+							"key": "aspiration",
+							"value": "turbo"
+						}
+					]
+				},
+				"description": "Mercedes turbo"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v2/search?aspiration=turbo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJwcmluY2lwYWwiOiJINHNJQUFBQUFBQUFBSlZTUDBcL2JRQlJcL0Rva29RbXFoRXBVNndBTGRLa2VpWTZhQ0FoS3lBQkd5VUtuVnhYNjRSODUzNXU1TWtnVmxLZ01EaUQ4U0VsK0Jid0pMUDBEVkRsMlp1XC9hZElUaXdJRzZ5M1wvMzgrXC9kOGRRc1ZvK0ZUckJrWHhrOUZGblBwbTFSekdSc01NODF0ejg4TTZnaHRqbGpPZ1UyYXdOM3hTdUFGVU9LUmhiZkJEdHRqVmNGa1hGMXI3V0JvYTEwTjgwckg5NHpibWlYWVVicnRQM0NIU3VNamdZTGFPeTdCNkJaTXNqQlVtYlNyU3RhN0tkY1liY0ZFTVF0VTJIYWpxWkJ1VUZyT2hCbUdqcUprTFlGUkFPTXNzOThWcVhJMEZ0N2NtYzBzRjlVRzJsb0FyMUptRExsN2txUmhuWFYzNzJ4S1NyQUwrMUR1cGg0ZDZ1NkRnXC9xT3gxOVVRbEJxcnFTWmE4cEVSWHliTzNIaTcwK2ZcL0R5NjdEZExBTlRKeCtlXC9LZWJ2RjZCXC9cL2ZYZlRGNjBGMXA0TjJTOWdOVzZLYm1aTEpnM05UcmxYeGZycCtlM0IxOUdTTmtobGw2K2o3blA5ODMxRmxXU01zMnNHdG9SMFhiSzdwbklGNTRuSDJ5aDV6ZDRrZ3FrUDBwYWpCNGtDbUtLVzlaS0RQcTJNTGF4RnRTXC9OUnYxRGZkV1NYZ2JPeVQ2T3NcL3NsdVVIaWxaMStQZjQ1bWoyTnhHc1FHV1BpUXlwOG9rQ3RKb2xMZFFcL3JzNm54OFwvK0hPWUJCalwvemYwR2RVWmdRQXdBQSIsInN1YiI6Im1pa2V3Iiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTQ5NzAxNzE0MCwiaWF0IjoxNDk3MDEzNTQwfQ.g-wofFE2b7SjIJaw7e4D2GeWE09icr3WbgBQsB-Pyl8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"bhp\": 601\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/v2/search?aspiration=turbo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"v2",
+						"search"
+					],
+					"query": [
+						{
+							"key": "aspiration",
+							"value": "turbo"
+						}
+					]
+				},
+				"description": "All Turbo"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v2/1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"bhp\": 601\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/v2/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"v2",
+						"1"
+					]
+				},
+				"description": "Car ID 1 v1"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v2/1 = application/hal+json",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"bhp\": 601\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"2"
+					]
+				},
+				"description": "Car ID 1 v1"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"aspiration\": \"Turbocharged\",\r\n\"bhp\": 326,\r\n\"cylinders\": 6,\r\n\"displacement\": 2997,\r\n\"manufacturer\": \"Toyota\",\r\n\"model\": \"Supra\",\r\n\"topSpeed\": 156,\r\n\"valves\": 24,\r\n\"weight\": 1565,\r\n\"zeroToSixty\": \"5.1\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/v2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"v2"
+					]
+				},
+				"description": "POST new Supra"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"aspiration\": \"Turbocharged\",\r\n\"bhp\": 478,\r\n\"cylinders\": 8,\r\n\"displacement\": 2936,\r\n\"manufacturer\": \"Ferrari\",\r\n\"model\": \"F40\",\r\n\"topSpeed\": 201,\r\n\"valves\": 32,\r\n\"weight\": 1100,\r\n\"zeroToSixty\": \"3.7\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/v2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"v2"
+					]
+				},
+				"description": "POST F40"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"aspiration\": \"Natural\",\r\n\"bhp\": 552,\r\n\"cylinders\": 10,\r\n\"displacement\": 5204,\r\n\"manufacturer\": \"Lamborghini\",\r\n\"model\": \"Gallardo LP560-4\",\r\n\"topSpeed\": 202,\r\n\"valves\": 40,\r\n\"weight\": 1500,\r\n\"zeroToSixty\": \"3.2\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/v2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"v2"
+					]
+				},
+				"description": "POST Gallardo"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v1/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"bhp\": 600\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/v2/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"v2",
+						"1"
+					]
+				},
+				"description": "PUT Mercedes C63 BHP to 600"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v2/4",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"weight\": 2000,\r\n  \"zeroToSixty\": \"3.6\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/v2/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"v2",
+						"4"
+					]
+				},
+				"description": "PUT multiple Nissan changes"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v1/4",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/v2/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"v2",
+						"4"
+					]
+				},
+				"description": "DELETE Nissan"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/cars/v3",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJwcmluY2lwYWwiOiJINHNJQUFBQUFBQUFBSlZTUDBcL2JRQlJcL0Rva29RbXFoRXBVNndBTGRLa2VpWTZhQ0FoS3lBQkd5VUtuVnhYNjRSODUzNXU1TWtnVmxLZ01EaUQ4U0VsK0Jid0pMUDBEVkRsMlp1XC9hZElUaXdJRzZ5M1wvMzgrXC9kOGRRc1ZvK0ZUckJrWHhrOUZGblBwbTFSekdSc01NODF0ejg4TTZnaHRqbGpPZ1UyYXdOM3hTdUFGVU9LUmhiZkJEdHRqVmNGa1hGMXI3V0JvYTEwTjgwckg5NHpibWlYWVVicnRQM0NIU3VNamdZTGFPeTdCNkJaTXNqQlVtYlNyU3RhN0tkY1liY0ZFTVF0VTJIYWpxWkJ1VUZyT2hCbUdqcUprTFlGUkFPTXNzOThWcVhJMEZ0N2NtYzBzRjlVRzJsb0FyMUptRExsN2txUmhuWFYzNzJ4S1NyQUwrMUR1cGg0ZDZ1NkRnXC9xT3gxOVVRbEJxcnFTWmE4cEVSWHliTzNIaTcwK2ZcL0R5NjdEZExBTlRKeCtlXC9LZWJ2RjZCXC9cL2ZYZlRGNjBGMXA0TjJTOWdOVzZLYm1aTEpnM05UcmxYeGZycCtlM0IxOUdTTmtobGw2K2o3blA5ODMxRmxXU01zMnNHdG9SMFhiSzdwbklGNTRuSDJ5aDV6ZDRrZ3FrUDBwYWpCNGtDbUtLVzlaS0RQcTJNTGF4RnRTXC9OUnYxRGZkV1NYZ2JPeVQ2T3NcL3NsdVVIaWxaMStQZjQ1bWoyTnhHc1FHV1BpUXlwOG9rQ3RKb2xMZFFcL3JzNm54OFwvK0hPWUJCalwvemYwR2RVWmdRQXdBQSIsInN1YiI6Im1pa2V3Iiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTU0MTc2NTQ3MywiaWF0IjoxNTQxNzYxODczfQ.0Slw0jW7Nt9A7eSvuEOsEJgQo3Xt2uVmF0loLunVWmo"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9090/api/cars/v3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"cars",
+						"v3"
+					]
+				},
+				"description": "GET all cars V3"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/api/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"mikew\",\n\t\"password\": \"password1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "Login & get token"
+			},
+			"response": []
+		}
+	]
+}
